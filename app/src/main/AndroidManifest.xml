@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eko27.app">
 
+    <!-- Ruxsatlar -->
     <uses-permission android:name="android.permission.INTERNET" />
-    
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -12,14 +12,20 @@
         android:label="EKO 27"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
-        <activity android:name=".SplashActivity">
+        <!-- SplashActivity uchun android:exported qo‘shildi -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />
+        <!-- MainActivity uchun android:exported qo‘shildi (agar intent filter bo‘lsa, true bo‘lishi kerak) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
 
     </application>
 
